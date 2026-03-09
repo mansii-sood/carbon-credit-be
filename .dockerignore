@@ -1,3 +1,16 @@
+# .dockerignore for Backend
+# Place this file in your backend root directory (carbon-credit-backend)
+
 node_modules
+npm-debug.log
 .env
+.env.local
+.env.*.local
 .git
+.gitignore
+README.md
+.DS_Store
+*.log
+coverage
+.vscode
+.idea

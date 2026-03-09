@@ -3,6 +3,8 @@ import {
   recordMeasure,
   recordReduction,
   purchaseOffset,
+  shareCredits,
+  getOffsetTransactions
   
 } from "../controllers/carbonController.js";
 
@@ -15,6 +17,10 @@ router.post("/measure", authMiddleware, recordMeasure);
 router.post("/reduce" , authMiddleware, recordReduction);
 
 router.post("/offset", authMiddleware, purchaseOffset);
+
+router.get("/offsets", authMiddleware, getOffsetTransactions);
+
+router.post("/share", authMiddleware, shareCredits);
 
 
 export default router;
