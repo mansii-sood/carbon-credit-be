@@ -2,6 +2,7 @@ services:
   - type: web
     name: carbon-credit-backend
     env: node
+    plan: free
     rootDir: carbon-credit-backend
     buildCommand: npm install
     startCommand: node server.js
