@@ -1,7 +1,7 @@
 # Backend Dockerfile
 # Place this file in your backend root directory (carbon-credit-backend)
 
-FROM node:20-alpine
+FROM node:20-slim
 
 # Set working directory
 WORKDIR /app
@@ -10,13 +10,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm ci --only=production
 
 # Copy the rest of the application
 COPY . .
 
-# Expose the port your backend runs on (change if different)
-EXPOSE 5001
+# Expose the correct port matching docker-compose
+EXPOSE 5000
 
-# Start the application
-CMD ["npm", "start"]
+# Start the application correctly
+CMD ["node", "server.js"]
