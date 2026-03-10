@@ -19,6 +19,15 @@ app.use("/api/dashboard", dashboardRoutes);
 
 app.get("/", (req, res) => res.send("API running"));
 
-connectDB();
-const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => console.log(`Server ${PORT}`));
+const startServer = async () => {
+  try {
+    await connectDB();
+    const PORT = process.env.PORT || 5001;
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  } catch (err) {
+    console.error("Failed to start server:", err.message);
+    process.exit(1);
+  }
+};
+
+startServer();
