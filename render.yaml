@@ -8,8 +8,6 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 5000
       - key: MONGO_URI
         sync: false # Set this securely in the Render dashboard
       - key: JWT_SECRET
